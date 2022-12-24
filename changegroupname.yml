@@ -1,0 +1,11 @@
+---
+- hosts: all
+  tasks:
+  - name: Change file ownership, group and permissions
+    ansible.builtin.file:
+      path: /tmp/naveen.sh
+      owner: ansible
+      group: ansible
+      mode: '0644'
+      state: file
+...

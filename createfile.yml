@@ -1,0 +1,11 @@
+---
+- hosts: "all"
+  tasks: 
+   - name: "Create a file"
+     file: 
+      path: "/tmp/naveen.sh"
+      mode: "0777"
+      owner: "ansible"
+      state: "touch"
+      group: "root"
+...

@@ -1,0 +1,14 @@
+---
+- hosts: all
+  become: true
+  tasks:
+  - name: installApachehttpserver
+    yum:
+     name: httpd
+     state: latest
+  - name: startapacheserver
+    service:
+      name: httpd
+      state: started
+      enabled: true
+...
