@@ -1,0 +1,22 @@
+---
+- hosts: all
+  become: true
+  tasks:
+   - pip:
+     name: boto3
+   - name: amazon.aws.ec2_instance
+     tags: naveen
+     ec2:
+         access_key: AKIAUWDMAS2JWVA3OWN3
+         secret_key: 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
+         key_name: naveen0414
+         instance_type: t2.micro
+         image: ami-010d564ad44bd1912
+         region: ap-southeast-1
+         wait: yes
+         vpc_subnet_id: subnet-01219d3757628a0c0
+         assign_public_ip: yes
+         group: default
+         count: 2
+...
+

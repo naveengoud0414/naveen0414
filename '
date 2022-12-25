@@ -1,0 +1,19 @@
+---
+- hosts: all
+  become: true
+  tasks: 
+   - name: creatingec2instance
+     ec2:
+         access_key: AKIAUWDMAS2JWVA3OWN3
+         secret_key: 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
+         key_name: naveen0414
+         instance_type: t2.micro
+         image: ami-010d564ad44bd1912
+         region: ap-southeast-1
+         wait: yes
+         vpc_subnet_id: default
+         assign_public_ip: yes
+         group: default
+         count: 2
+...
+
