@@ -1,0 +1,25 @@
+---
+- hosts: all
+  become: true
+  tasks: 
+   - name: Install Apache Http server
+     tags: 
+      - madhu
+     yum: 
+       name: httpd
+       state: latest
+   - name: Start te Apache HTTP Server
+     tags: 
+      - sindhu
+      - install
+     service: 
+       name: httpd
+       enabled: yes
+       state: started
+   - name: Copy index.html file
+     tags:
+       - Naveen
+     copy: 
+       src: index.html
+       dest: /var/www/html/index.html
+... 
